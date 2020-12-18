@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>a的名字{{a.a}}</p>
+    <p>b的名字{{b}}</p>
+    <input type="text" v-model="b">
+    <p>name:{{name}}</p>
+  </div>
+  <!-- <script src="./js/mode.js"></script> -->
+  <script src="./js/mvvm.js"></script>
+  <script>
+    let min=new Min({
+      el:'#app',
+      data:{
+        a:{a:'是a'},
+        b:'是b',
+        c:'是c'
+      },
+      computed:{
+        name(){
+          return this.b+this.c;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
